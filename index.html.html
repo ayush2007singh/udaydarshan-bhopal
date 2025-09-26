@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>उदय दर्शन भोपाल - भोपाल की आवाज़</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Header with Weather and Date -->
+    <div class="top-header">
+        <div class="container">
+            <div class="left-info">
+                <span class="date" id="currentDate"></span>
+                <span class="separator">|</span>
+                <span class="update-time">Updated <span id="updateTime"></span></span>
+            </div>
+            <div class="right-info">
+                <div class="weather" id="weather">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>भोपाल</span>
+                    <i class="fas fa-cloud-sun"></i>
+                    <span>28°C</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-content">
+                    <img src="logo.jpg" alt="उदय दर्शन लोगो" class="logo-image">
+                    <div class="logo-text">
+                        <h1>उदय दर्शन</h1>
+                        <p>भोपाल की आवाज़</p>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" placeholder="खबरें खोजें...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#" class="active">होम</a></li>
+                <li><a href="#">भोपाल समाचार</a></li>
+                <li><a href="#">मध्य प्रदेश</a></li>
+                <li><a href="#">देश</a></li>
+                <li><a href="#">विदेश</a></li>
+                <li><a href="#">खेल</a></li>
+                <li><a href="#">मनोरंजन</a></li>
+                <li><a href="#">व्यापार</a></li>
+                <li><a href="#">तकनीक</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breaking News Ticker -->
+    <div class="breaking-news">
+        <div class="container">
+            <div class="breaking-label">
+                <i class="fas fa-bolt"></i>
+                <span>ब्रेकिंग न्यूज़</span>
+            </div>
+            <div class="news-ticker">
+                <div class="ticker-content" id="breakingNewsTicker">
+                    <!-- Breaking news will be loaded here automatically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Column - Main News -->
+                <div class="left-column">
+                    <!-- Featured News -->
+                    <section class="featured-news">
+                        <div class="main-story" id="featuredNews">
+                            <!-- Featured news will be loaded here automatically -->
+                        </div>
+                    </section>
+
+                    <!-- News Grid -->
+                    <section class="news-grid" id="newsGrid">
+                        <!-- News items will be loaded here automatically -->
+                    </section>
+
+                    <!-- MP News Section -->
+                    <section class="state-news">
+                        <h2 class="section-title">मध्य प्रदेश की खबरें</h2>
+                        <div class="news-list" id="mpNewsList">
+                            <!-- MP news will be loaded here automatically -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Sidebar -->
+                <div class="right-sidebar">
+                    <!-- Today's ePaper -->
+                    <div class="epaper-section">
+                        <h3>आज का ई-पेपर</h3>
+                        <div class="epaper-preview">
+                            <img src="epaper-preview.jpg" alt="Today's ePaper" id="epaperPreview">
+                            <div class="epaper-buttons">
+                                <button class="epaper-btn" onclick="downloadEpaper()">
+                                    <i class="fas fa-download"></i> PDF डाउनलोड करें
+                                </button>
+                                <button class="epaper-btn secondary" onclick="viewEpaper()">
+                                    <i class="fas fa-eye"></i> ऑनलाइन देखें
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Popular News -->
+                    <div class="popular-section">
+                        <h3>लोकप्रिय खबरें</h3>
+                        <div class="popular-list" id="popularNewsList">
+                            <!-- Popular news will be loaded here automatically -->
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="categories-section">
+                        <h3>श्रेणियां</h3>
+                        <div class="categories-list">
+                            <a href="#" class="category-link">भोपाल समाचार <span id="bhopalCount">(0)</span></a>
+                            <a href="#" class="category-link">राजनीति <span id="politicsCount">(0)</span></a>
+                            <a href="#" class="category-link">खेल <span id="sportsCount">(0)</span></a>
+                            <a href="#" class="category-link">मनोरंजन <span id="entertainmentCount">(0)</span></a>
+                            <a href="#" class="category-link">व्यापार <span id="businessCount">(0)</span></a>
+                            <a href="#" class="category-link">तकनीक <span id="techCount">(0)</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Live Updates -->
+                    <div class="live-updates">
+                        <h3>लाइव अपडेट्स</h3>
+                        <div class="live-indicator">
+                            <span class="live-dot"></span>
+                            <span>अभी लाइव</span>
+                        </div>
+                        <div class="live-news-list" id="liveUpdates">
+                            <!-- Live updates will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>उदय दर्शन भोपाल</h3>
+                    <p>भोपाल और मध्य प्रदेश की सबसे तेज़ और विश्वसनीय खबरों का स्रोत</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>श्रेणियां</h4>
+                    <ul>
+                        <li><a href="#">भोपाल समाचार</a></li>
+                        <li><a href="#">मध्य प्रदेश</a></li>
+                        <li><a href="#">राजनीति</a></li>
+                        <li><a href="#">खेल</a></li>
+                        <li><a href="#">मनोरंजन</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>संपर्क</h4>
+                    <p><i class="fas fa-envelope"></i> info@udaydarshanbhopal.com</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> भोपाल, मध्य प्रदेश</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>डाउनलोड्स</h4>
+                    <div class="download-links">
+                        <a href="#" onclick="downloadEpaper()" class="download-link">
+                            <i class="fas fa-file-pdf"></i> आज का ई-पेपर
+                        </a>
+                        <a href="#" class="download-link">
+                            <i class="fas fa-mobile-alt"></i> मोबाइल ऐप
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 उदय दर्शन भोपाल. सभी अधिकार सुरक्षित.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>समाचार लोड हो रहे हैं...</p>
+    </div>
+
+    <script src="news-fetcher.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
