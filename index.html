@@ -17,7 +17,10 @@
         <span>Updated <span id="updateTime"></span></span>
       </div>
       <div class="right-info">
-        <div id="weather"><i class="fas fa-map-marker-alt"></i> भोपाल <i class="fas fa-cloud-sun"></i> 28°C</div>
+        <div id="weather">
+          <i class="fas fa-map-marker-alt"></i> भोपाल 
+          <i class="fas fa-cloud-sun"></i> 28°C
+        </div>
         <div class="social-links">
           <a href="#"><i class="fab fa-facebook"></i></a>
           <a href="#"><i class="fab fa-twitter"></i></a>
@@ -27,20 +30,40 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- ePaper Download Section -->
+  <div class="epaper-section">
+    <h3>आज का ई-पेपर</h3>
+    <div class="epaper-preview">
+      <img src="epaper-preview.jpg" alt="Today's ePaper" id="epaperPreview">
+      <div class="epaper-buttons">
+        <button class="epaper-btn" onclick="downloadEpaper()">
+          <i class="fas fa-download"></i> PDF डाउनलोड करें
+        </button>
+        <button class="epaper-btn secondary" onclick="viewEpaper()">
+          <i class="fas fa-eye"></i> ऑनलाइन देखें
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
   <header class="main-header">
     <div class="container">
       <div class="logo-content">
         <img src="logo.jpg" alt="उदय दर्शन लोगो" class="logo-image">
-        <div class="logo-text"><h1>उदय दर्शन</h1><p>भोपाल की आवाज़</p></div>
+        <div class="logo-text">
+          <h1>उदय दर्शन</h1>
+          <p>भोपाल की आवाज़</p>
+        </div>
       </div>
       <div class="search-box">
-        <input placeholder="खबरें खोजें..."><button><i class="fas fa-search"></i></button>
+        <input placeholder="खबरें खोजें...">
+        <button><i class="fas fa-search"></i></button>
       </div>
     </div>
   </header>
 
-  <!-- Nav -->
+  <!-- Navigation -->
   <nav class="main-nav">
     <ul class="nav-links">
       <li><a class="active">होम</a></li>
@@ -56,20 +79,25 @@
     <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
   </nav>
 
-  <!-- Ticker -->
+  <!-- Breaking News Ticker -->
   <div class="breaking-news">
-    <div class="breaking-label"><i class="fas fa-bolt"></i>ब्रेकिंग न्यूज़</div>
+    <div class="breaking-label">
+      <i class="fas fa-bolt"></i>ब्रेकिंग न्यूज़
+    </div>
     <div class="ticker-content" id="breakingNewsTicker"></div>
   </div>
 
-  <!-- Content -->
+  <!-- Main Content -->
   <main class="main-content container">
     <section class="featured-news" id="featuredNews"></section>
     <section class="news-grid" id="newsGrid"></section>
   </main>
 
-  <!-- Spinner -->
-  <div id="loadingSpinner" class="loading-spinner"><div class="spinner"></div><p>समाचार लोड हो रहे हैं...</p></div>
+  <!-- Loading Spinner -->
+  <div id="loadingSpinner" class="loading-spinner">
+    <div class="spinner"></div>
+    <p>समाचार लोड हो रहे हैं...</p>
+  </div>
 
   <!-- Scripts -->
   <script src="news-fetcher.js"></script>
